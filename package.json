@@ -7,10 +7,6 @@
     "test": "go test ./...",
     "prepare": "husky"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@git.gitea.svc.alrest.xeserv.us:xe/project-template.git"
-  },
   "author": "Xe Iaso <me@xeiaso.net>",
   "license": "MIT",
   "devDependencies": {
