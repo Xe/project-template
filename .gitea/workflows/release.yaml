@@ -60,8 +60,8 @@ jobs:
           GITEA_URL: https://git.xeserv.us
           GIT_AUTHOR_NAME: Mimi Yasomi
           GIT_AUTHOR_EMAIL: mimi@xeserv.us
-          GIT_COMMITTER_NAME: Xe Iaso
-          GIT_COMMITTER_EMAIL: me@xeiaso.net
+          GIT_COMMITTER_NAME: Mimi Yasomi
+          GIT_COMMITTER_EMAIL: mimi@xeserv.us
           EDITOR: "echo 'Created-by: semantic-release' > $1"
         run: |
           npm ci
