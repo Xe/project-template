@@ -1,6 +1,6 @@
 {
   "name": "@xe/project-template",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A template with yeet, semantic-release, and more set up",
   "main": "index.js",
   "scripts": {

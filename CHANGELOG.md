@@ -1,3 +1,9 @@
+## [0.2.5](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.4...v0.2.5) (2025-05-03)
+
+### Bug Fixes
+
+- **release:** do this the less braindead way ([f3930f7](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/f3930f757f9ae5dca7415c4e2266f70b9bec4be1))
+
 ## [0.2.4](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.3...v0.2.4) (2025-05-03)
 
 ### Bug Fixes
