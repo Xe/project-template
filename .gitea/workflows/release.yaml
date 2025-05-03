@@ -65,4 +65,4 @@ jobs:
           EDITOR: "echo 'Created-by: semantic-release' > $1"
         run: |
           npm ci
-          npx semantic-release --debug
+          npx semantic-release -- --debug
