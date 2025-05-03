@@ -43,7 +43,7 @@ jobs:
           echo "${{ secrets.RELEASE_GPG_KEY }}" | base64 -d > ~/.ssh/gpg_privkey
           chmod 600 ~/.ssh/gpg_privkey
           gpg --batch --yes --import ~/.ssh/gpg_privkey
-          echo 'echo "${{ secrets.RELEASE_GPG_PASSPHRASE }}" | /usr/bin/gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --no-tty "$@"' > /tmp/gpg-with-passphrase && chmod +x /tmp/gpg-with-passphrase
+          echo '/usr/bin/gpg --batch --yes --pinentry-mode loopback --passphrase ${{ secrets.RELEASE_GPG_PASSPHRASE }} --no-tty "$@"' > /tmp/gpg-with-passphrase && chmod +x /tmp/gpg-with-passphrase
           git config --global gpg.program "/tmp/gpg-with-passphrase"
           git config --global commit.gpgsign true
           git config --global tag.gpgsign true
