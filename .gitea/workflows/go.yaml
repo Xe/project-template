@@ -26,6 +26,9 @@ jobs:
         with:
           version: 22
 
+      - run: |
+          node --version
+
       - name: Install deps
         run: npm ci
 
