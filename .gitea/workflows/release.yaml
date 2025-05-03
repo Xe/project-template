@@ -62,6 +62,7 @@ jobs:
           GIT_AUTHOR_EMAIL: mimi@xeserv.us
           GIT_COMMITTER_NAME: Xe Iaso
           GIT_COMMITTER_EMAIL: me@xeiaso.net
+          EDITOR: "echo 'Created-by: semantic-release' > $1"
         run: |
           npm ci
           npx semantic-release
