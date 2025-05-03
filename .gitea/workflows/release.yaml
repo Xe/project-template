@@ -44,6 +44,10 @@ jobs:
         env:
           GITEA_TOKEN: ${{ secrets.RELEASE_GITEA_TOKEN }}
           GITEA_URL: https://git.xeserv.us
+          GIT_AUTHOR_NAME: Mimi Yasomi
+          GIT_AUTHOR_EMAIL: mimi@xeserv.us
+          GIT_COMMITTER_NAME: Mimi Yasomi
+          GIT_COMMITTER_EMAIL: mimi@xeserv.us
         run: |
           npm ci
           npx semantic-release
