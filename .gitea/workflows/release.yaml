@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo ${{ secrets.RELEASE_SSH_KEY }} | base64 -d > ~/.ssh/id_ed25519
+          ssh-keyscan git.gitea.svc.alrest.xeserv.us >> ~/.ssh/known_hosts
         env:
           RELEASE_SSH_KEY: ${{ secrets.RELEASE_SSH_KEY }}
 
