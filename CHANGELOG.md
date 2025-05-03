@@ -1,3 +1,9 @@
+## [0.2.3](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.2...v0.2.3) (2025-05-03)
+
+### Bug Fixes
+
+- **release:** do you do --debug this way? ([4525263](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/4525263603aa3032f67f2e7f2ce94623d576c51c))
+
 ## [0.2.2](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.1...v0.2.2) (2025-05-03)
 
 ### Bug Fixes
