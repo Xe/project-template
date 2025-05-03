@@ -1,3 +1,9 @@
+## [0.2.2](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.1...v0.2.2) (2025-05-03)
+
+### Bug Fixes
+
+- **ci:** give our robot overlord her own key ([49a4a13](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/49a4a13dcaac760c81af6706d553cb2f09a81b1d))
+
 ## [0.2.1](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.0...v0.2.1) (2025-05-03)
 
 ### Bug Fixes
