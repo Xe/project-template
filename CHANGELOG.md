@@ -1,3 +1,9 @@
+## [0.2.1](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.0...v0.2.1) (2025-05-03)
+
+### Bug Fixes
+
+- re-sign Mimi's keys ([de6460c](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/de6460c0058d3151c94ccf00c6ef943f830b4a14))
+
 # [0.2.0](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.1.0...v0.2.0) (2025-05-03)
 
 ### Features
