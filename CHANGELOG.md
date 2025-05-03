@@ -1,3 +1,9 @@
+## [0.2.4](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.3...v0.2.4) (2025-05-03)
+
+### Bug Fixes
+
+- **release:** git cat-file -p HEAD ([ea6d110](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/ea6d11071a30a53d5ac98ab06684e5cee5a4eb59))
+
 ## [0.2.3](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.2...v0.2.3) (2025-05-03)
 
 ### Bug Fixes
