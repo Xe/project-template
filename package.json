@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://git.xeserv.us/xe/project-template"
+    "url": "git+ssh://git@git.gitea.svc.alrest.xeserv.us/xe/project-template.git"
   },
   "author": "Xe Iaso <me@xeiaso.net>",
   "license": "MIT",

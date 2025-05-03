@@ -31,6 +31,13 @@ jobs:
         with:
           node-version: 22
 
+      - name: set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo ${{ secrets.RELEASE_SSH_KEY }} | base64 -d > ~/.ssh/id_ed25519
+        env:
+          RELEASE_SSH_KEY: ${{ secrets.RELEASE_SSH_KEY }}
+
       - name: release
         env:
           GITEA_TOKEN: ${{ secrets.RELEASE_GITEA_TOKEN }}
