@@ -1,3 +1,9 @@
+# [0.3.0](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.5...v0.3.0) (2025-07-03)
+
+### Features
+
+- development container ([3bcb676](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/3bcb67647764c7b0a33ee8647b55f2aa55bab8d9))
+
 ## [0.2.5](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.4...v0.2.5) (2025-05-03)
 
 ### Bug Fixes
