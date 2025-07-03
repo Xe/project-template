@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "ms-vsliveshare.vsliveshare",
+    "ms-azuretools.vscode-containers",
+    "ms-azuretools.vscode-docker",
+    "dbaeumer.vscode-eslint",
+    "golang.go",
+    "esbenp.prettier-vscode",
+    "a-h.templ",
+    "redhat.vscode-yaml",
+    "github.vscode-github-actions",
+    "jinliming2.vscode-go-template",
+    "davidanson.vscode-markdownlint",
+    "ms-vscode.wordcount"
+  ]
+}
