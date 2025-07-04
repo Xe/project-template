@@ -30,7 +30,7 @@ services:
       dockerfile: .devcontainer/Dockerfile
     volumes:
       - ../:/workspace:cached
-    #command: sleep infinity
+    # entrypoint: ["/usr/bin/sleep", "infinity"]
     user: vscode
     environment:
       <<: *postgres-env

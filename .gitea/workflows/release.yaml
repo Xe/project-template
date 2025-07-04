@@ -66,5 +66,5 @@ jobs:
         run: |
           npm ci
           npx semantic-release --debug
-      
+
       - run: git cat-file -p HEAD
