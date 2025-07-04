@@ -1,3 +1,9 @@
+# [0.4.0](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.3.0...v0.4.0) (2025-07-04)
+
+### Features
+
+- **devcontainer:** use docker compose ([b0bfe42](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/b0bfe42fe9f3dee84111f99d779d9cfa3189cf05))
+
 # [0.3.0](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.2.5...v0.3.0) (2025-07-03)
 
 ### Features
