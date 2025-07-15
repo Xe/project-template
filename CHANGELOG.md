@@ -1,3 +1,9 @@
+# [0.7.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.6.0...v0.7.0) (2025-07-15)
+
+### Features
+
+- workspace folder personalization script ([a2e651d](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/a2e651d48de9e0054d48ae8c170935a641d4f853))
+
 # [0.6.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.5.0...v0.6.0) (2025-07-15)
 
 ### Bug Fixes
