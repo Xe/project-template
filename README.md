@@ -91,7 +91,7 @@ Prefer using Postgres for storing data.
 
    ```text
    git add .
-   git commit -sm "chore: initial commit"
+   git commit -sm "feat: initial commit"
    ```
 
 1. Push to Gitea:
@@ -100,25 +100,15 @@ Prefer using Postgres for storing data.
    git push
    ```
 
-1. Open the Actions view in the repo on gitea and be sure tests pass
-1. If tests pass, tag version `v0.0.1`:
-
-   ```text
-   git tag -s v0.0.1 -m "initial tag"
-   ```
-
-1. Then push to Gitea:
-
-   ```text
-   git push
-   git push --tags
-   ```
-
+1. Open the Actions view in the repo on gitea and be sure tests pass.
+1. If tests pass, open the Actions view, click on `release.yaml`, and then click "Run Workflow".
 1. Gitea will process things and then Mimi will push version v0.1.0. This is normal. Once it's done, `git pull`:
 
    ```text
    git pull
    ```
+
+You can now develop your service as normal!
 
 ## Local tasks
 

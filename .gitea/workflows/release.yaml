@@ -2,10 +2,6 @@ name: Cut Release
 on:
   workflow_dispatch: {}
 
-  # Fix repo on initial tag
-  push:
-    tags: ["v0.0.1"]
-
 permissions:
   contents: write
   actions: write
