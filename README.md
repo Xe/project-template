@@ -45,54 +45,21 @@ Prefer using Postgres for storing data.
    bash .devcontainer/personalize.sh
    ```
 
+   This does the following:
+
+   - Customizes the mountpount of the development container workspace folder so it matches your project name.
+   - Edits the development container docker compose to match that workspace folder change.
+   - Renames all of the Go imports to your Gitea repo so you don't try to pull code from the template on accident.
+   - Updates the `name` in `package.json` to `@you/project`.
+   - Updates the `version` in `package.json` to `0.0.0` (Mimi will manage versioning for you).
+   - Removes some setup logic from the `package.json` `scripts` section.
+   - Deletes the [CHANGELOG.md](./CHANGELOG.md) file that the template uses.
+   - Edits `docker-bake.hcl` to make a unique image for you.
+   - Cleans up other tooling dependencies for setup.
+   - Formats your code.
+   - Deletes the setup script.
+
 1. Open in a development container.
-1. Change the title of this readme:
-
-   ```diff
-   -# project-template
-   +# Your project name here
-   ```
-
-   Then add a description of what this project does.
-
-1. Edit package.json:
-
-   ```diff
-   -"name": "@xe/project-template",
-   -"version": "<whatever>",
-   +"name": "@techaro/project-name",
-   +"version": "0.0.0",
-   ```
-
-1. Remove `CHANGELOG.md`:
-
-   ```text
-   rm CHANGELOG.md
-   ```
-
-   Mimi will make you a new one.
-
-1. Rename the package based on your git repo URL:
-
-   ```text
-   npm run rename git.xeserv.us/Techaro/project-name
-   ```
-
-   This will update all the import paths to point to your project instead of the template.
-
-1. Edit `docker-bake.hcl` based on your project name:
-
-   ```diff
-      tags = [
-   -    "registry.int.xeserv.us/projects/name:latest",
-   -    "registry.int.xeserv.us/projects/name:${GITHUB_SHA}"
-   +    "registry.int.xeserv.us/owner/name:latest",
-   +    "registry.int.xeserv.us/owner/name:${GITHUB_SHA}"
-      ]
-   ```
-
-   This will build and push images to `registry.int.xeserv.us` (public name: `reg.xeiaso.net`).
-
 1. Commit the new data to main:
 
    ```text
