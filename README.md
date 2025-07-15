@@ -55,7 +55,7 @@ Prefer using Postgres for storing data.
    -"name": "@xe/project-template",
    -"version": "<whatever>",
    +"name": "@techaro/project-name",
-   +"version": "0.0.1",
+   +"version": "0.0.0",
    ```
 
 1. Remove `CHANGELOG.md`:
@@ -101,8 +101,8 @@ Prefer using Postgres for storing data.
    ```
 
 1. Open the Actions view in the repo on gitea and be sure tests pass.
-1. If tests pass, open the Actions view, click on `release.yaml`, and then click "Run Workflow".
-1. Gitea will process things and then Mimi will push version v0.1.0. This is normal. Once it's done, `git pull`:
+1. If tests pass, open the Actions view, click on `release.yaml`, and then click "Run Workflow". You may need to run it twice.
+1. Gitea will process things and then Mimi will push version v1.0.0. This is normal. Once it's done, `git pull`:
 
    ```text
    git pull
