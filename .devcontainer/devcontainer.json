@@ -6,8 +6,11 @@
   "dockerComposeFile": ["./docker-compose.yaml"],
   "service": "workspace",
   "workspaceFolder": "/workspace",
-  "postStartCommand": "npm ci && go mod download",
+  "postStartCommand": "bash ./.devcontainer/poststart.sh",
   "initializeCommand": "mkdir -p ${localEnv:HOME}${localEnv:USERPROFILE}/.local/share/atuin",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/act:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
