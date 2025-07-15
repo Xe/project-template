@@ -29,7 +29,7 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     volumes:
-      - ../:/workspace:cached
+      - ../:/workspace/project-template:cached
     # entrypoint: ["/usr/bin/sleep", "infinity"]
     user: vscode
     environment:

@@ -5,7 +5,7 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "dockerComposeFile": ["./docker-compose.yaml"],
   "service": "workspace",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspace/project-template",
   "postStartCommand": "bash ./.devcontainer/poststart.sh",
   "initializeCommand": "mkdir -p ${localEnv:HOME}${localEnv:USERPROFILE}/.local/share/atuin",
   "features": {
