@@ -1,11 +1,11 @@
-package xess
+package web
 
 templ Base(title string, headArea, navBar, bodyArea, footer templ.Component) {
 	<!DOCTYPE html>
 	<html>
 		<head>
 			<title>{ title }</title>
-			<link rel="stylesheet" href={ URL }/>
+			<link rel="stylesheet" href="/static/css/xess.css"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			if headArea != nil {
 				@headArea
@@ -40,7 +40,7 @@ templ Simple(title string, body templ.Component) {
 	)
 }
 
-templ fourohfour(path string) {
+templ NotFound(path string) {
 	<p>404: <code>{ path }</code></p>
 	<p>Sorry but the number you have reached is either not available or out of service. If you are reaching this message in error, please hang up and try your call again.</p>
 }

@@ -6,10 +6,11 @@
   "scripts": {
     "generate": "go generate ./... && npx prettier -w .",
     "dev": "npm run generate && go run ./cmd/web",
-    "psql": "psql $DATABASE_URL",
-    "redis": "redis-cli -u $REDIS_URL",
+    "dev:psql": "psql $DATABASE_URL",
+    "dev:redis": "redis-cli -u $REDIS_URL",
     "format": "npx prettier -w . && go tool goimports -w .",
     "test": "npm run generate && go build -o /dev/null ./... && go test ./...",
+    "test:gha": "act -W .gitea/workflows",
     "prepare": "husky",
     "rename": "go tool gomvp git.xeserv.us/xe/project-template"
   },
