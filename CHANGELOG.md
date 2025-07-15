@@ -1,3 +1,9 @@
+# [0.8.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.7.0...v0.8.0) (2025-07-15)
+
+### Features
+
+- **devcontainer/personalize:** rewrite to totally handle all of the previously manual setup logic ([8f42d5c](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/8f42d5cc453b77fbcf2a60dd2ed7d06c4c357117))
+
 # [0.7.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.6.0...v0.7.0) (2025-07-15)
 
 ### Features
