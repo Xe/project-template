@@ -8,9 +8,6 @@ import (
 
 	"git.xeserv.us/xe/project-template/internal"
 	"git.xeserv.us/xe/project-template/models"
-	"git.xeserv.us/xe/project-template/web"
-	"git.xeserv.us/xe/project-template/xess"
-	"github.com/a-h/templ"
 	"github.com/facebookgo/flagenv"
 	_ "github.com/joho/godotenv/autoload"
 )
@@ -31,15 +28,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	_ = dao
+
+	s := &Server{
+		dao: dao,
+	}
 
 	mux := http.NewServeMux()
-
-	xess.Mount(mux)
-
-	mux.Handle("/{$}", templ.Handler(xess.Simple("Hello!", web.Index())))
-
-	mux.HandleFunc("/", xess.NotFound)
+	s.register(mux)
 
 	slog.Info("now listening", "url", "http://localhost"+*bind)
 	log.Fatal(http.ListenAndServe(*bind, mux))
