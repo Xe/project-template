@@ -1,3 +1,13 @@
+# [0.6.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.5.0...v0.6.0) (2025-07-15)
+
+### Bug Fixes
+
+- move xess into web ([89fd955](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/89fd95555a5b1365d8763131438d3981be2a4712))
+
+### Features
+
+- add ability to auto rename all code ([c287808](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/c2878087ecf8ebbce6462c91833692f0c4a63673))
+
 # [0.5.0](https://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.4.0...v0.5.0) (2025-07-15)
 
 ### Features
