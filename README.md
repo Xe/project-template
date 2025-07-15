@@ -29,17 +29,26 @@ Prefer using Postgres for storing data.
 
 ## Usage
 
-1. Hit "Use this template" on Gitea and create a new repo
-1. Choose a user / org for it (either your username or Techaro)
+1. Hit "Use this template" on Gitea and create a new repo.
+1. Choose a user / org for it (either your username or Techaro).
 1. Choose the following template items:
 
    - Git Content (Default Branch)
    - Issue Labels
 
-1. Hit "Create Repository"
-1. (if you aren't making this in the Techaro org) Open the repo settings, click on collaboration, invite [Mimi](https://git.xeserv.us/mimi) with Administrator permissions so she can make releases for you
-1. Clone to your machine
-1. Open in a development container
+1. Hit "Create Repository".
+1. (if you aren't making this in the Techaro org) Open the repo settings, click on collaboration, invite [Mimi](https://git.xeserv.us/mimi) with Administrator permissions so she can make releases for you.
+1. Clone to your machine.
+1. Open in a development container.
+1. Change the title of this readme:
+
+   ```diff
+   -# project-template
+   +# Your project name here
+   ```
+
+   Then add a description of what this project does.
+
 1. Edit package.json:
 
    ```diff
@@ -55,11 +64,15 @@ Prefer using Postgres for storing data.
    rm CHANGELOG.md
    ```
 
+   Mimi will make you a new one.
+
 1. Rename the package based on your git repo URL:
 
    ```text
    npm run rename git.xeserv.us/Techaro/project-name
    ```
+
+   This will update all the import paths to point to your project instead of the template.
 
 1. Edit `docker-bake.hcl` based on your project name:
 
@@ -71,6 +84,8 @@ Prefer using Postgres for storing data.
    +    "registry.int.xeserv.us/owner/name:${GITHUB_SHA}"
       ]
    ```
+
+   This will build and push images to `registry.int.xeserv.us` (public name: `reg.xeiaso.net`).
 
 1. Commit the new data to main:
 
@@ -99,7 +114,7 @@ Prefer using Postgres for storing data.
    git push --tags
    ```
 
-1. Gitea will process things and then push version v0.1.0. This is normal. Once it's done, `git pull`:
+1. Gitea will process things and then Mimi will push version v0.1.0. This is normal. Once it's done, `git pull`:
 
    ```text
    git pull
