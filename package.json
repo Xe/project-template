@@ -4,7 +4,7 @@
   "description": "A template with yeet, semantic-release, and more set up",
   "main": "index.js",
   "scripts": {
-    "generate": "go generate ./...",
+    "generate": "go generate ./... && npx prettier -w .",
     "dev": "npm run generate && go run ./cmd/web",
     "psql": "psql $DATABASE_URL",
     "redis": "redis-cli -u $REDIS_URL",

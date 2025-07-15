@@ -20,13 +20,15 @@ const (
 	postgresPassword = "hunter2"
 )
 
-func TestNewDAO(t *testing.T) {
+func maybeSpawnDB(t *testing.T) string {
+	t.Helper()
+
 	dbURL := os.Getenv("DATABASE_URL")
 
 	if dbURL == "" {
 		if os.Getenv("USE_TEST_CONTAINERS") == "" {
 			t.Skip("test requires test containers")
-			return
+			return ""
 		}
 
 		testcontainers.SkipIfProviderIsNotHealthy(t)
@@ -56,6 +58,12 @@ func TestNewDAO(t *testing.T) {
 
 		dbURL = fmt.Sprintf("postgresql://%s:%s@%s/%s?sslmode=disable", postgresUser, postgresPassword, containerIP, postgresDB)
 	}
+
+	return dbURL
+}
+
+func TestNewDAO(t *testing.T) {
+	dbURL := maybeSpawnDB(t)
 
 	dao, err := New(dbURL)
 	if err != nil {
