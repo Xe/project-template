@@ -25,7 +25,9 @@
         "GitHub.vscode-github-actions",
         "jinliming2.vscode-go-template",
         "DavidAnson.vscode-markdownlint",
-        "ms-vscode.wordcount"
+        "ms-vscode.wordcount",
+        "hashicorp.hcl",
+        "docker.docker"
       ]
     }
   }

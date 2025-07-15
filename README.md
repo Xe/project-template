@@ -1,6 +1,20 @@
 # project-template
 
-A template with yeet, semantic-release, and more set up.
+A template with Docker, xess, Postgres, semantic-release, and more set up.
+
+Things you need to know:
+
+- This template enforces [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). They also ship a [cheat sheet](https://www.conventionalcommits.org/en/v1.0.0/#summary).
+- This template works best with [Development containers](https://containers.dev/) in your editor.
+
+## Services
+
+When you start this project as a development container, it spawns the following services:
+
+- [Postgres](https://www.postgresql.org/) version 16 for permanent data storage.
+- [Valkey](https://valkey.io/) version 8 for cache data or ephemeral data stroage.
+
+Prefer using Postgres for storing data.
 
 ## Project structure
 
@@ -30,15 +44,32 @@ A template with yeet, semantic-release, and more set up.
 
    ```diff
    -"name": "@xe/project-template",
-   +"name": "@techaro/project-name",
    -"version": "<whatever>",
+   +"name": "@techaro/project-name",
    +"version": "0.0.1",
+   ```
+
+1. Remove `CHANGELOG.md`:
+
+   ```text
+   rm CHANGELOG.md
    ```
 
 1. Rename the package based on your git repo URL:
 
    ```text
    npm run rename git.xeserv.us/Techaro/project-name
+   ```
+
+1. Edit `docker-bake.hcl` based on your project name:
+
+   ```diff
+      tags = [
+   -    "registry.int.xeserv.us/projects/name:latest",
+   -    "registry.int.xeserv.us/projects/name:${GITHUB_SHA}"
+   +    "registry.int.xeserv.us/owner/name:latest",
+   +    "registry.int.xeserv.us/owner/name:${GITHUB_SHA}"
+      ]
    ```
 
 1. Commit the new data to main:
@@ -55,6 +86,24 @@ A template with yeet, semantic-release, and more set up.
    ```
 
 1. Open the Actions view in the repo on gitea and be sure tests pass
+1. If tests pass, tag version `v0.0.1`:
+
+   ```text
+   git tag -s v0.0.1 -m "initial tag"
+   ```
+
+1. Then push to Gitea:
+
+   ```text
+   git push
+   git push --tags
+   ```
+
+1. Gitea will process things and then push version v0.1.0. This is normal. Once it's done, `git pull`:
+
+   ```text
+   git pull
+   ```
 
 ## Local tasks
 
