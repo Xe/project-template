@@ -24,6 +24,7 @@ require (
 	github.com/Songmu/gitconfig v0.2.0 // indirect
 	github.com/TecharoHQ/yeet v0.2.2 // indirect
 	github.com/a-h/parse v0.0.0-20250122154542-74294addb73e // indirect
+	github.com/abenz1267/gomvp v0.0.4 // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/blakesmith/ar v0.0.0-20190502131153-809d4375e1fb // indirect
 	github.com/cavaliergopher/cpio v1.0.1 // indirect
@@ -136,6 +137,7 @@ require (
 tool (
 	github.com/TecharoHQ/yeet/cmd/yeet
 	github.com/a-h/templ/cmd/templ
+	github.com/abenz1267/gomvp
 	golang.org/x/tools/cmd/goimports
 	golang.org/x/tools/cmd/stringer
 )
