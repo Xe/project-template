@@ -16,11 +16,6 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
 
     services:
-      valkey:
-        image: "valkey/valkey:8"
-        env:
-          VALKEY_EXTRA_FLAGS: "--save 60 1 --loglevel warning"
-
       postgres:
         image: "postgres:16"
         env:
@@ -32,6 +27,11 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
+      valkey:
+        image: "valkey/valkey:8"
+        env:
+          VALKEY_EXTRA_FLAGS: "--save 60 1 --loglevel warning"
 
     steps:
       - name: Checkout repository
