@@ -24,7 +24,7 @@ services:
 
   # VS Code workspace service
   workspace:
-    image: ghcr.io/xe/devcontainer/project-template
+    image: ghcr.io/xe/project-template/devcontainer
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
@@ -34,6 +34,8 @@ services:
     user: vscode
     environment:
       <<: *postgres-env
+      DATABASE_URL: postgresql://admin:hunter2@postgres/project?sslmode=disable
+      REDIS_URL: redis://valkey:6379/0
 
 volumes:
   postgres-data:
