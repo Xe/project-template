@@ -8,6 +8,7 @@
     "dev": "npm run generate && go run ./cmd/web",
     "psql": "psql $DATABASE_URL",
     "redis": "redis-cli -u $REDIS_URL",
+    "format": "npx prettier -w . && go tool goimports -w .",
     "test": "npm run generate && go build -o /dev/null ./... && go test ./...",
     "prepare": "husky"
   },
