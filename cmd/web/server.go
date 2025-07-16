@@ -6,10 +6,14 @@ import (
 	"git.xeserv.us/xe/project-template/models"
 	"git.xeserv.us/xe/project-template/web"
 	"github.com/a-h/templ"
+	"github.com/rbcervilla/redisstore/v9"
 )
 
+const sessionName = "session"
+
 type Server struct {
-	dao *models.DAO
+	dao   *models.DAO
+	store *redisstore.RedisStore
 }
 
 func (s *Server) register(mux *http.ServeMux) {
@@ -19,6 +23,17 @@ func (s *Server) register(mux *http.ServeMux) {
 }
 
 func (s *Server) Index(w http.ResponseWriter, r *http.Request) {
+	session, err := s.store.Get(r, sessionName)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	if err := s.store.Save(r, w, session); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
 	templ.Handler(web.Simple("Hello!", web.Index())).ServeHTTP(w, r)
 }
 

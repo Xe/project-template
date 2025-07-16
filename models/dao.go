@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"log/slog"
 
+	"git.xeserv.us/xe/project-template/models/valkeycache"
+	"github.com/go-gorm/caches/v4"
 	slogGorm "github.com/orandin/slog-gorm"
+	valkey "github.com/redis/go-redis/v9"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -17,7 +20,7 @@ func (d *DAO) DB() *gorm.DB {
 	return d.db
 }
 
-func New(dbURL string) (*DAO, error) {
+func New(dbURL string, rdb *valkey.Client) (*DAO, error) {
 	db, err := gorm.Open(postgres.Open(dbURL), &gorm.Config{
 		Logger: slogGorm.New(
 			slogGorm.WithErrorField("err"),
@@ -34,6 +37,15 @@ func New(dbURL string) (*DAO, error) {
 		&Example{},
 	); err != nil {
 		return nil, fmt.Errorf("can't run migrations: %w", err)
+	}
+
+	cachesPlugin := &caches.Caches{Conf: &caches.Config{
+		Easer:  true,
+		Cacher: valkeycache.New(rdb),
+	}}
+
+	if err := db.Use(cachesPlugin); err != nil {
+		return nil, fmt.Errorf("can't configure cache: %w", err)
 	}
 
 	return &DAO{
