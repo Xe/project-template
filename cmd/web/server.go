@@ -1,15 +1,54 @@
 package main
 
 import (
+	"context"
+	"fmt"
 	"net/http"
 
 	"git.xeserv.us/xe/project-template/models"
 	"git.xeserv.us/xe/project-template/web"
 	"github.com/a-h/templ"
+	"github.com/gorilla/sessions"
 	"github.com/rbcervilla/redisstore/v9"
 )
 
 const sessionName = "session"
+
+type Options struct {
+	DatabaseURL string
+	RedisURL    string
+}
+
+func New(opts Options) (*Server, error) {
+	rdb, err := models.ConnectValkey(opts.RedisURL)
+	if err != nil {
+		return nil, fmt.Errorf("can't connect to valkey: %w", err)
+	}
+
+	dao, err := models.New(opts.DatabaseURL, rdb)
+	if err != nil {
+		return nil, fmt.Errorf("can't create DAO: %w", err)
+	}
+
+	store, err := redisstore.NewRedisStore(context.Background(), rdb)
+	if err != nil {
+		return nil, fmt.Errorf("can't create redis store: %w", err)
+	}
+
+	store.KeyPrefix("session:")
+	store.Options(sessions.Options{
+		HttpOnly: true,
+		SameSite: http.SameSiteStrictMode,
+		MaxAge:   86400 * 60,
+	})
+
+	result := &Server{
+		dao:   dao,
+		store: store,
+	}
+
+	return result, nil
+}
 
 type Server struct {
 	dao   *models.DAO
