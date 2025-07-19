@@ -32,6 +32,7 @@ templ Base(title string, headArea, navBar, bodyArea, footer templ.Component, fla
 				}
 			</main>
 		</body>
+		<script src="/static/js/htmx.js"></script>
 	</html>
 }
 
@@ -62,8 +63,9 @@ templ flashMessages(flashes []models.Flash) {
 	<div class="flash-container">
 		for _, flash := range flashes {
 			<div class={ "flash", "flash-" + flash.Kind }>
-				<span class="flash-message">@templ.Raw(flash.Body)
-</span>
+				<span class="flash-message">
+					@templ.Raw(flash.Body)
+				</span>
 				<button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
 			</div>
 		}
