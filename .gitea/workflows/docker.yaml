@@ -36,6 +36,7 @@ jobs:
         with:
           source: .
           push: true
+          targets: devcontainer,web
           # set: |
           #   web.tags+=git.xeserv.us/xe/project-template/cmd/web:latest
 

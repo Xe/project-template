@@ -4,7 +4,6 @@ variable "GITHUB_SHA" { default = "devel" }
 
 group "default" {
   targets = [
-    "devcontainer",
     "web",
   ]
 }
