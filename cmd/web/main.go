@@ -58,6 +58,9 @@ func main() {
 	mux := http.NewServeMux()
 	s.register(mux)
 
+	var h http.Handler = mux
+	h = s.sessionMiddleware(h)
+
 	slog.Info("now listening", "url", "http://localhost"+*bind)
-	log.Fatal(http.ListenAndServe(*bind, mux))
+	log.Fatal(http.ListenAndServe(*bind, h))
 }

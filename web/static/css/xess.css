@@ -119,6 +119,219 @@ footer {
   text-align: center;
 }
 
+/* Flash message styles */
+.flash-container {
+  margin-bottom: 1rem;
+}
+
+.flash {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  font-family: "Schibsted Grotesk", sans-serif;
+  animation: slideIn 0.3s ease-out;
+}
+
+.flash-message {
+  flex: 1;
+}
+
+.flash-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  color: inherit; /* Inherit color from flash message */
+  font-weight: bold;
+}
+
+.flash-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Flash message types */
+.flash-success {
+  background-color: oklch(40% 0.15 145);
+  border-color: oklch(50% 0.2 145);
+  color: oklch(95% 0.05 145);
+}
+
+.flash-error {
+  background-color: oklch(40% 0.15 25);
+  border-color: oklch(50% 0.2 25);
+  color: oklch(95% 0.05 25);
+}
+
+.flash-warning {
+  background-color: oklch(45% 0.15 75);
+  border-color: oklch(55% 0.2 75);
+  color: oklch(95% 0.05 75);
+}
+
+.flash-info {
+  background-color: oklch(40% 0.15 240);
+  border-color: oklch(50% 0.2 240);
+  color: oklch(95% 0.05 240);
+}
+
+/* Ensure close button is visible in all flash types */
+.flash-success .flash-close {
+  color: oklch(95% 0.05 145);
+}
+
+.flash-error .flash-close {
+  color: oklch(95% 0.05 25);
+}
+
+.flash-warning .flash-close {
+  color: oklch(95% 0.05 75);
+}
+
+.flash-info .flash-close {
+  color: oklch(95% 0.05 240);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar styles */
+.nav-brand {
+  font-family: Podkova, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-right: auto;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: oklch(96.55% 0.0394 100.86);
+}
+
+.nav-brand:hover {
+  color: oklch(59.73% 0.1105 352.22);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Changed from center to flex-end */
+  align-items: center;
+  min-height: 3rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Add flex container for brand + menu */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: oklch(24.08% 0.0049 219.67 / 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid oklch(34.41% 0.0066 48.52);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  max-width: 50rem;
+  margin: 0 auto 2rem auto;
+  padding: 0 2rem;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 0.25rem;
+  background-color: transparent;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: oklch(34.41% 0.0066 48.52);
+  transform: translateY(-1px);
+}
+
+nav a.active {
+  background-color: oklch(27.68% 0 0);
+  color: oklch(59.73% 0.1105 352.22);
+}
+
+/* Mobile menu toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: oklch(96.55% 0.0394 100.86);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media only screen and (max-device-width: 736px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: oklch(24.08% 0.0049 219.67);
+    border-bottom: 1px solid oklch(34.41% 0.0066 48.52);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  nav ul.open {
+    max-height: 20rem;
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav a {
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-bottom: 1px solid oklch(34.41% 0.0066 48.52);
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 0.75rem;
+    right: 2rem;
+  }
+
+  nav {
+    position: relative;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background: oklch(96.55% 0.0394 100.86);
@@ -150,5 +363,84 @@ footer {
     border-left: 1px solid oklch(48.08% 0.0172 64.07);
     margin: 0.5em 10px;
     padding: 0.5em 10px;
+  }
+
+  .flash-success {
+    background-color: oklch(85% 0.1 145);
+    border-color: oklch(70% 0.15 145);
+    color: oklch(25% 0.1 145);
+  }
+
+  .flash-error {
+    background-color: oklch(85% 0.1 25);
+    border-color: oklch(70% 0.15 25);
+    color: oklch(25% 0.1 25);
+  }
+
+  .flash-warning {
+    background-color: oklch(90% 0.1 75);
+    border-color: oklch(75% 0.15 75);
+    color: oklch(30% 0.1 75);
+  }
+
+  .flash-info {
+    background-color: oklch(85% 0.1 240);
+    border-color: oklch(70% 0.15 240);
+    color: oklch(25% 0.1 240);
+  }
+
+  .flash-success .flash-close {
+    color: oklch(25% 0.1 145);
+  }
+
+  .flash-error .flash-close {
+    color: oklch(25% 0.1 25);
+  }
+
+  .flash-warning .flash-close {
+    color: oklch(30% 0.1 75);
+  }
+
+  .flash-info .flash-close {
+    color: oklch(25% 0.1 240);
+  }
+
+  /* Light mode navbar styles */
+  nav {
+    background: oklch(96.55% 0.0394 100.86 / 0.95);
+    border-bottom: 1px solid oklch(89.41% 0.0566 89.24);
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background-color: oklch(89.41% 0.0566 89.24);
+  }
+
+  nav a.active {
+    background-color: oklch(95.55% 0.0555 96.15);
+    color: oklch(59.73% 0.1105 352.22);
+  }
+
+  .nav-brand {
+    color: oklch(24.08% 0.0049 219.67);
+  }
+
+  .nav-brand:hover {
+    color: oklch(59.73% 0.1105 352.22);
+  }
+
+  .nav-toggle {
+    color: oklch(24.08% 0.0049 219.67);
+  }
+
+  @media only screen and (max-device-width: 736px) {
+    nav ul {
+      background: oklch(96.55% 0.0394 100.86);
+      border-bottom: 1px solid oklch(89.41% 0.0566 89.24);
+    }
+
+    nav a {
+      border-bottom: 1px solid oklch(89.41% 0.0566 89.24);
+    }
   }
 }
