@@ -1,3 +1,15 @@
+# [0.9.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.8.0...v0.9.0) (2025-07-19)
+
+### Bug Fixes
+
+- **dao:** add advisory lock to avoid race conditions when multiple tests migrate at the same time ([d929ea0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/d929ea068de52a2bfa76f6180f92c834a22999de))
+
+### Features
+
+- add valkey gorm caching, sessions in valkey ([acf715e](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/acf715ec3fee55ce62409ec05dd5d31009fa57d1))
+- implement session middleware and flash message storage ([4240007](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/4240007d80408a1c4c6b514022139edf0707c6ba))
+- **web:** compress static assets on the wire, import htmx ([46bf4a7](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/commit/46bf4a778611a892267cb8bab8b523d6aac7ee81))
+
 # [0.8.0](http://git.gitea.svc.alrest.xeserv.us/xe/project-template/compare/v0.7.0...v0.8.0) (2025-07-15)
 
 ### Features
