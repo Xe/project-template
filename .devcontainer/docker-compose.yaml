@@ -24,10 +24,17 @@ services:
 
   # VS Code workspace service
   workspace:
-    image: ghcr.io/xe/project-template/devcontainer
+    image: registry.int.xeserv.us/xe/project-template/devcontainer
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+      cache_from:
+        - type=registry,ref=registry.int.xeserv.us/xe/project-template/devcontainer/cache
+      cache_to:
+        - type=registry,ref=registry.int.xeserv.us/xe/project-template/devcontainer/cache
     volumes:
       - ../:/workspace/project-template:cached
     # entrypoint: ["/usr/bin/sleep", "infinity"]

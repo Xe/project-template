@@ -13,6 +13,7 @@
     "davidanson.vscode-markdownlint",
     "ms-vscode.wordcount",
     "hashicorp.hcl",
-    "docker.docker"
+    "docker.docker",
+    "fredwangwang.vscode-hcl-format"
   ]
 }
