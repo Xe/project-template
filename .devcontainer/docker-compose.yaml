@@ -24,7 +24,7 @@ services:
 
   # VS Code workspace service
   workspace:
-    image: registry.int.xeserv.us/xe/project-template/devcontainer
+    image: registry.int.xeserv.us/projects/name/devcontainer:latest
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
