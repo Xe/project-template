@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"log/slog"
+	"time"
 
 	slogGorm "github.com/orandin/slog-gorm"
 	valkey "github.com/redis/go-redis/v9"
@@ -30,10 +31,39 @@ func New(dbURL string, rdb *valkey.Client) (*DAO, error) {
 		return nil, fmt.Errorf("can't open database: %w", err)
 	}
 
-	if err := db.AutoMigrate(
-		// put list of models here
-		&Example{},
-	); err != nil {
+	// Use advisory lock to prevent concurrent migrations with exponential backoff
+	var lockResult bool
+	backoff := 125 * time.Millisecond
+	maxRetries := 5
+
+	for attempt := 0; attempt < maxRetries; attempt++ {
+		err = db.Raw("SELECT pg_try_advisory_lock(12345)").Scan(&lockResult).Error
+		if err != nil {
+			return nil, fmt.Errorf("can't acquire migration lock: %w", err)
+		}
+
+		if lockResult {
+			break
+		}
+
+		// If not the last attempt, wait with exponential backoff
+		if attempt < maxRetries-1 {
+			time.Sleep(backoff)
+			backoff *= 2 // Double the backoff time for next attempt
+		}
+	}
+
+	if !lockResult {
+		return nil, fmt.Errorf("failed to acquire migration lock after %d attempts", maxRetries)
+	}
+
+	defer func() {
+		db.Raw("SELECT pg_advisory_unlock(12345)")
+	}()
+
+	// Now run migration safely
+	err = db.AutoMigrate(&Example{})
+	if err != nil {
 		return nil, fmt.Errorf("can't run migrations: %w", err)
 	}
 
