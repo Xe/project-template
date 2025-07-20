@@ -1,0 +1,43 @@
+name: Security Issue
+about: Report vulnerabilities or security concerns
+title: "security: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a security issue. Please provide as much detail as possible.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: true
+  - type: textarea
+    id: security-details
+    attributes:
+      label: Security Details
+      description: |
+        Please describe the security issue and any relevant context.
+      placeholder: Describe the security issue here...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Reproduction Steps
+      description: |
+        Provide steps to reproduce the security issue, if applicable.
+      placeholder: Describe the steps...
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      hide_label: true
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

@@ -1,0 +1,60 @@
+name: Regression
+about: Something that used to work no longer does
+title: "regression: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this regression.gitea/issue_template/bug.yaml report!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: |
+        Please include reproduction steps and any other information that may help us diagnose the issue.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      placeholder: Version ...
+    validations:
+      required: true
+  - type: textarea
+    id: browsers
+    attributes:
+      label: What browser are you seeing the problem on?
+      description: |
+        Be sure to include:
+
+        1. Browser name
+        2. Browser version
+        3. Browser extensions
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      hide_label: true
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
+        - label: This is a TODO only visible after issue creation
+          visible: [content]

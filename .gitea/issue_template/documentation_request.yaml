@@ -1,0 +1,43 @@
+name: Documentation Request
+about: Suggest improvements or additions to documentation
+title: "documentation: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve our documentation!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: doc-improvement
+    attributes:
+      label: Documentation Improvement
+      description: |
+        Please describe the improvement or addition you'd like to see in our documentation.
+      placeholder: Describe your suggestion here...
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: |
+        Explain how this documentation improvement would help users.
+      placeholder: Describe the use case...
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      hide_label: true
+      description: By submitting this request, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

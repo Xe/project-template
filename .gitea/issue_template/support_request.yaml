@@ -1,0 +1,43 @@
+name: Support Request
+about: Request help or clarification
+title: "support: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out for support! Please provide as much detail as possible.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: issue-details
+    attributes:
+      label: Issue Details
+      description: |
+        Please describe the issue you're facing and any relevant context.
+      placeholder: Describe your issue here...
+    validations:
+      required: true
+  - type: textarea
+    id: steps-tried
+    attributes:
+      label: Steps Tried
+      description: |
+        List any steps you've already tried to resolve the issue.
+      placeholder: Describe the steps you've taken...
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      hide_label: true
+      description: By submitting this request, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

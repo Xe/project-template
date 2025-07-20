@@ -1,0 +1,43 @@
+name: Feature Request
+about: Suggest a new feature or enhancement
+title: "feature: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to share your idea for a new feature!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: |
+        Please describe the feature you'd like to see and why it would be useful.
+      placeholder: Describe your feature idea here...
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: |
+        Explain how this feature would be used and what problem it solves.
+      placeholder: Describe the use case...
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      hide_label: true
+      description: By submitting this feature request, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
