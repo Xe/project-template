@@ -16,14 +16,14 @@ target "devcontainer" {
     "linux/arm64",
   ]
   cache-from = [
-    "type=registry,ref=registry.int.xeserv.us/projects/name/devcontainer/cache"
+    "type=registry,ref=ghcr.io/xe/project-template/devcontainer/cache"
   ]
   cache-to = [
-    "type=registry,ref=registry.int.xeserv.us/projects/name/devcontainer/cache"
+    "type=registry,ref=ghcr.io/xe/project-template/devcontainer/cache"
   ]
   pull = true
   tags = [
-    "registry.int.xeserv.us/projects/name/devcontainer:latest"
+    "ghcr.io/xe/project-template/devcontainer:latest"
   ]
 }
 
@@ -40,7 +40,7 @@ target "web" {
   ]
   pull = true
   tags = [
-    "registry.int.xeserv.us/projects/name:latest",
-    "registry.int.xeserv.us/projects/name:${GITHUB_SHA}"
+    "ghcr.io/xe/project-template:latest",
+    "ghcr.io/xe/project-template:${GITHUB_SHA}"
   ]
 }

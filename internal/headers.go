@@ -3,7 +3,7 @@ package internal
 import (
 	"net/http"
 
-	"git.xeserv.us/xe/project-template/globals"
+	"github.com/Xe/project-template/globals"
 )
 
 func UnchangingCache(h http.Handler) http.Handler {

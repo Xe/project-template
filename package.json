@@ -12,17 +12,17 @@
     "prepare": "husky",
     "test": "npm run generate && go build -o /dev/null ./... && go test ./...",
     "test:gha": "act -W .gitea/workflows",
-    "setup:rename": "go tool gomvp git.xeserv.us/xe/project-template"
+    "setup:rename": "go tool gomvp github.com/Xe/project-template"
   },
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@saithodev/semantic-release-gitea": "^2.1.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.3",
     "@semantic-release/npm": "^12.0.1",
     "@semantic-release/release-notes-generator": "^14.0.3",
     "husky": "^9.1.7",

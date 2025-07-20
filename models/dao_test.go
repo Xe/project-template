@@ -3,7 +3,7 @@ package models
 import (
 	"testing"
 
-	"git.xeserv.us/xe/project-template/models/modelstest"
+	"github.com/Xe/project-template/models/modelstest"
 )
 
 func TestNewDAO(t *testing.T) {

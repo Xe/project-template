@@ -5,7 +5,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"git.xeserv.us/xe/project-template/models/modelstest"
+	"github.com/Xe/project-template/models/modelstest"
 )
 
 func makeServer(t *testing.T) (*Server, *httptest.Server) {

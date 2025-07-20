@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"git.xeserv.us/xe/project-template/models"
+	"github.com/Xe/project-template/models"
 	"github.com/gorilla/sessions"
 )
 

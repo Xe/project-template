@@ -35,4 +35,4 @@ COPY --from=build /app/bin/web /app/bin/web
 
 CMD ["/app/bin/web"]
 
-LABEL org.opencontainers.image.source="https://git.xeserv.us/xe/project-template"
+LABEL org.opencontainers.image.source="https://github.com/Xe/project-template"

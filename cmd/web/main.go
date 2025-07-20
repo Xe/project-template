@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	"git.xeserv.us/xe/project-template/internal"
+	"github.com/Xe/project-template/internal"
 	"github.com/facebookgo/flagenv"
 	_ "github.com/joho/godotenv/autoload"
 )
