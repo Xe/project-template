@@ -14,6 +14,8 @@
     "ms-vscode.wordcount",
     "hashicorp.hcl",
     "docker.docker",
-    "fredwangwang.vscode-hcl-format"
+    "fredwangwang.vscode-hcl-format",
+    "editorconfig.editorconfig",
+    "otovo-oss.htmx-tags"
   ]
 }
