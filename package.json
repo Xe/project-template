@@ -11,7 +11,7 @@
     "generate": "go generate ./... && npm run format",
     "prepare": "husky",
     "test": "npm run generate && go build -o /dev/null ./... && go test ./...",
-    "test:gha": "act -W .gitea/workflows",
+    "test:gha": "act -W .github/workflows",
     "setup:rename": "go tool gomvp github.com/Xe/project-template"
   },
   "license": "MIT",

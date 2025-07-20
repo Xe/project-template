@@ -32,7 +32,6 @@ Prefer using Postgres for storing data.
 1. Hit "Use this template" on Gitea and create a new repo.
 1. Choose a user / org for it (either your username or Techaro).
 1. Choose the following template items:
-
    - Git Content (Default Branch)
    - Issue Labels
 
@@ -46,7 +45,6 @@ Prefer using Postgres for storing data.
    ```
 
    This does the following:
-
    - Customizes the mountpount of the development container workspace folder so it matches your project name.
    - Edits the development container docker compose to match that workspace folder change.
    - Renames all of the Go imports to your Gitea repo so you don't try to pull code from the template on accident.
