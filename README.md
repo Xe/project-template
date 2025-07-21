@@ -32,12 +32,11 @@ Prefer using Postgres for storing data.
 1. Hit "Use this template" on Gitea and create a new repo.
 1. Choose a user / org for it (either your username or Techaro).
 1. Choose the following template items:
-
    - Git Content (Default Branch)
    - Issue Labels
 
 1. Hit "Create Repository".
-1. (if you aren't making this in the Techaro org) Open the repo settings, click on collaboration, invite [Mimi](https://git.xeserv.us/mimi) with Administrator permissions so she can make releases for you.
+1. (if you aren't making this in the Techaro org) Open the repo settings, click on collaboration, invite [Mimi](https://github.com/Xe) with Administrator permissions so she can make releases for you.
 1. Clone to your machine.
 1. Run `.devcontainer/personalize.sh`:
 
@@ -46,7 +45,6 @@ Prefer using Postgres for storing data.
    ```
 
    This does the following:
-
    - Customizes the mountpount of the development container workspace folder so it matches your project name.
    - Edits the development container docker compose to match that workspace folder change.
    - Renames all of the Go imports to your Gitea repo so you don't try to pull code from the template on accident.

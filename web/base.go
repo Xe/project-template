@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"git.xeserv.us/xe/project-template/internal"
 	"github.com/NYTimes/gziphandler"
+	"github.com/Xe/project-template/internal"
 )
 
 var (

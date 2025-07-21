@@ -6,7 +6,7 @@ package web
 //lint:file-ignore SA4006 This context is only used if a nested component is present.
 
 import (
-	"git.xeserv.us/xe/project-template/models"
+	"github.com/Xe/project-template/models"
 	"github.com/a-h/templ"
 	templruntime "github.com/a-h/templ/runtime"
 )

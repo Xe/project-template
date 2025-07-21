@@ -25,8 +25,8 @@ else
   exit 1
 fi
 
-# (Optionally) force domain if you always want git.xeserv.us:
-domain="git.xeserv.us"
+# (Optionally) force domain if you always want github.com:
+domain="github.com"
 rename_arg="$domain/$owner/$name_remote"
 
 echo "✅ Parsed remote → domain=$domain, owner=$owner, repo=$name_remote"
@@ -88,7 +88,7 @@ fi
 hcl="docker-bake.hcl"
 if [[ -f "$hcl" ]]; then
   sed -i.bak -E \
-    -e "s@registry\.int\.xeserv\.us/projects/name:latest@registry.int.xeserv.us/$owner/$name_remote@g" \
+    -e "s@ghcr\.io/xe/project-template:latest@ghcr.io/$owner/$name_remote@g" \
     "$hcl"
   rm -f "${hcl}.bak"
   echo "✅ Updated registry paths in $hcl to $owner/$name_remote"

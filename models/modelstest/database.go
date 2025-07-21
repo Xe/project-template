@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"git.xeserv.us/xe/project-template/internal"
+	"github.com/Xe/project-template/internal"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/wait"
 )

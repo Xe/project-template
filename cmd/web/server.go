@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"git.xeserv.us/xe/project-template/models"
-	"git.xeserv.us/xe/project-template/web"
+	"github.com/Xe/project-template/models"
+	"github.com/Xe/project-template/web"
 	"github.com/a-h/templ"
 	"github.com/gorilla/sessions"
 	"github.com/rbcervilla/redisstore/v9"

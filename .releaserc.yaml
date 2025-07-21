@@ -39,13 +39,13 @@ plugins:
           - BREAKING CHANGES
           - BREAKING
   - "@semantic-release/release-notes-generator"
-  - - "@saithodev/semantic-release-gitea"
+  - - "@semantic-release/github"
     - assets:
         - path: "./var/*"
   - - "@semantic-release/npm"
     - npmPublish: false
   - - "@semantic-release/changelog"
-    - changeLogFile: CHANGLOG.md
+    - changelogFile: CHANGELOG.md
   - - "@semantic-release/git"
     - assets:
         - CHANGELOG.md
@@ -54,5 +54,3 @@ plugins:
         chore(release): ${nextRelease.version} [skip ci]
 
         ${nextRelease.notes}
-
-        Signed-Off-By: Mimi Yasomi <mimi@xeserv.us>
